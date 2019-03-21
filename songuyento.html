@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let numbers=parseInt(prompt("nhập số lượng số nguyên tố bạn muốn in ra: "));
+   let count= 0;
+   let n=2;
+   let text = numbers + "số nguyên tố đầu tiên là: ";
+   while (count < numbers){
+       let prime = true;
+       for( let j =2; j<= Math.sqrt(n);j++){
+           if(n%j===0){
+               prime=false;
+               break;
+           }
+       }
+       if(prime === true){
+           count++;
+           if(count===numbers){
+               text+= n + ".";
+           }else {
+               text +=n + ",";
+           }
+       }
+       n++;
+   }
+document.write(text)
+</script>
+</body>
+</html>
